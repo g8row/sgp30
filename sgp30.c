@@ -60,7 +60,7 @@ int sgp30_get_meas(int* file_desc, __u8* res, int res_len){
 int main(){
 	struct identificator id;
 	id.dev_addr = 0x58;
-	printf("%d\n",i2c_open(&id.file_desc,id.dev_addr,1));
+	printf("%d\n",i2c_open(&id.file_desc,id.dev_addr,0));
 
 	printf("%d\n",sgp30_iaq_init(&id.file_desc));
 
