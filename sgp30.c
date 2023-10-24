@@ -26,15 +26,18 @@ int i2c_open(int* file_desc, __u8 dev_addr, int adapter_nr){
 	return 0;
 }
 
-int sgp30_iaq_init(int *file_desc){
+int sgp30_iaq_init(int *file_desc)
+{
 	__u8 buf [2];
- 	sleep(0.1);
+ 	
+	sleep(0.1);
   	buf[0]=0x20;
   	buf[1]=0x03;
 	if(write(*file_desc, buf, 2) != 2){
 		printf("failed to init sgp30\n");
 		return -1;
 	}
+	
 	return 0;
 }
 
